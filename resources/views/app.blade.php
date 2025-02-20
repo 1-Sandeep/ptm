@@ -10,6 +10,9 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Styles / Scripts -->
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
@@ -21,23 +24,20 @@
 
 <body class="font-sans antialiased">
     @if (session('success'))
-        <div class="bg-[#00C271] text-white p-4 rounded-lg mb-4 fixed top-5 right-5 z-50 opacity-0 transform translate-y-4 transition-all duration-300 ease-out"
+        <div class="bg-[#DFF6E3] border-[#008C45] border text-white p-4 rounded-lg mb-4 fixed top-5 right-5 z-50 opacity-0 transform translate-y-4 transition-all duration-300 ease-out"
             id="notification">
             <div class="flex justify-between">
-                <span>{{ session('success') }}</span>
-                <button class="text-white" id="close-notification">&times;</button>
+                <span class="text-[#008C45] font-semibold">{{ session('success') }}</span>
             </div>
         </div>
     @elseif (session('error'))
-        <div class="bg-[#FF4B5C] text-white p-4 rounded-lg mb-4 fixed top-5 right-5 z-50 opacity-0 transform translate-y-4 transition-all duration-300 ease-out"
+        <div class="bg-[#FFD6D9] border-[#C70039] border text-white p-4 rounded-lg mb-4 fixed top-5 right-5 z-50 opacity-0 transform translate-y-4 transition-all duration-300 ease-out"
             id="notification">
             <div class="flex justify-between">
-                <span>{{ session('error') }}</span>
-                <button class="text-white" id="close-notification">&times;</button>
+                <span class="text-[#C70039] font-semibold">{{ session('error') }}</span>
             </div>
         </div>
     @endif
-
 
     @yield('content')
 
@@ -55,8 +55,11 @@
                     notification.classList.add('opacity-0');
                     notification.classList.remove('opacity-100', 'translate-y-0');
                 }
-            }, 5000); // Hide notification after 5 seconds
+            }, 4000); // Hide notification after 5 seconds
         });
     </script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"
+        integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>

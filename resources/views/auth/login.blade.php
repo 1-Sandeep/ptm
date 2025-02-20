@@ -46,7 +46,8 @@
                 </button>
 
                 <p class="text-sm px-2 text-center">Don't have an account?
-                    <span><a href="{{ route('register') }}" class="text-[#3754DB] hover:underline">Register</a></span>
+                    <span><a href="{{ route('register') }}"
+                            class="text-[#3754DB] hover:underline hover:font-bold">Register</a></span>
                 </p>
             </form>
         </div>

@@ -15,7 +15,7 @@
                     <input type="text" name="name" id="name" value="{{ old('name') }}" required
                         class="mt-1 w-full px-4 py-2 border
                         border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#3754DB]
-                        focus:border-[#3754DB] @error('name') border-red-500 @enderror">
+                        focus:border-[#3754DB] @error('name') border-red-500  @enderror">
 
                     {{-- Display error message for name --}}
                     @error('name')
@@ -67,7 +67,8 @@
                 </button>
 
                 <p class="text-sm px-2 text-center">Already have an account?
-                    <span><a href="{{ route('login') }}" class="text-[#3754DB] hover:underline">Login</a></span>
+                    <span><a href="{{ route('login') }}"
+                            class="text-[#3754DB] hover:underline hover:font-bold">Login</a></span>
                 </p>
             </form>
         </div>
