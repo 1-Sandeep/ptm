@@ -6,7 +6,6 @@
 
     <div class="flex">
         @include('components.sidebar')
-
         {{-- Main Content --}}
         <main class="flex-1 p-6 ml-0 transition-all duration-300 ease-in-out relative">
             <button id="menuButton" class="absolute right-4 top-4 md:hidden bg-gray-800 text-white px-4 py-2 rounded-lg">

@@ -18,7 +18,8 @@
                  </a>
              </li>
              <li class="mb-2">
-                 <a href="#" class="flex items-center gap-x-4 px-4 py-2 rounded-lg hover:bg-gray-700">
+                 <a href="{{ route('task.index') }}"
+                     class="flex items-center gap-x-4 px-4 py-2 rounded-lg hover:bg-gray-700">
                      <i class="fa-solid fa-list-check"></i>
                      <span>Tasks</span>
                  </a>
