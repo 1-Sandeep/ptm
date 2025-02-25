@@ -32,15 +32,18 @@ class RegisterRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'Name is required.',
-            'email.required' => 'Email is required.',
+            'name.required' => 'The name field is required.',
+            'name.string' => 'The name must be a string.',
+            'name.max' => 'The name may not be greater than 100 characters.',
+            'email.required' => 'The email field is required.',
             'email.email' => 'Please provide a valid email address.',
-            'email.unique' => 'This email is already taken.',
-            'password.required' => 'Password is required.',
-            'password.min' => 'Password must be at least 8 characters.',
-            'password.confirmed' => 'Password confirmation does not match.',
-            'password_confirmation.required' => 'Please confirm your password.',
-            'password_confirmation.min' => 'Password confirmation must be at least 8 characters.',
+            'email.unique' => 'This email address is already taken.',
+            'password.required' => 'The password field is required.',
+            'password.min' => 'The password must be at least 8 characters long.',
+            'password.string' => 'The password must be a string.',
+            'password.confirmed' => 'The password confirmation does not match.',
+            'password_confirmation.required' => 'The password confirmation field is required.',
+            'password_confirmation.min' => 'The password confirmation must be at least 8 characters long.',
         ];
     }
 }
