@@ -48,7 +48,7 @@
                                 <p class="text-sm text-gray-600">Get productive.</p>
                             </div>
                             <button
-                                class="w-[215px] bg-[#3754DB] text-white text-sm font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-[#2e44b8] transition duration-200"
+                                class="w-[215px] bg-[#3754DB] text-white text-sm font-semibold  py-3 rounded-lg shadow-md hover:bg-[#2e44b8] transition duration-200"
                                 id="create-task-btn">
                                 Create New Task
                             </button>
@@ -109,6 +109,19 @@
         </div>
     </div>
 
+    {{-- Custom Logout Alert --}}
+    <div id="customAlert" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+            <h2 class="text-lg font-semibold text-gray-800 mb-4">Are you sure you want to log out?</h2>
+            <div class="flex justify-center space-x-4">
+                <button onclick="confirmLogout()"
+                    class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition">Yes</button>
+                <button onclick="closeAlert()"
+                    class="bg-gray-400 text-white px-4 py-2 rounded-lg hover:bg-gray-500 transition">Cancel</button>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Get modal and button references
         const modal = document.getElementById('task-modal');
@@ -124,6 +137,32 @@
         closeModalBtn.addEventListener('click', () => {
             modal.classList.add('hidden');
         });
+
+        // Sidebar Toggle Functionality
+        const sidebar = document.getElementById('sidebar');
+        const menuButton = document.getElementById('menuButton');
+        const sidebarToggle = document.getElementById('sidebarToggle');
+
+        menuButton.addEventListener('click', () => {
+            sidebar.classList.toggle('-translate-x-full');
+        });
+
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.add('-translate-x-full');
+        });
+
+        // Custom Logout Alert Box
+        function showLogoutAlert() {
+            document.getElementById('customAlert').classList.remove('hidden');
+        }
+
+        function closeAlert() {
+            document.getElementById('customAlert').classList.add('hidden');
+        }
+
+        function confirmLogout() {
+            document.getElementById('logoutForm').submit();
+        }
     </script>
 
 @endsection
